@@ -2,6 +2,7 @@ import pandas as pd
 
 
 
+NYC_POP = 8_740_000
 
 def main():
     
@@ -20,7 +21,17 @@ def main():
     pop_data['state'] = list(map(lambda x: x[1:] if x[0]=='.' else x,
                                  pop_data['state']))
 
+    pop_data['July'] = list(map(lambda x: int(x.replace(',', '')),
+                                 pop_data['July']))
 
+    
+    for i in range(len(pop_data)):
+        if pop_data['state'].iloc[i] == 'New York':
+            pop_data['July'] != NYC_POP
+
+    
+    nyc = ['New York City',  NYC_POP]
+    pop_data.loc[len(pop_data.index)] = nyc
     pop_data.to_csv('Population_data.csv')
     
 
