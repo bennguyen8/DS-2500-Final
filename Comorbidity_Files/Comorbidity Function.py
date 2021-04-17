@@ -1,6 +1,3 @@
-import pandas as pd
-import random
-
 def comorbidities():
     '''Gives score for comorbidity section for vaccine distribution'''
     df = pd.read_csv('Conditions_contributing_to_deaths_involving_coronavirus_disease_2019__COVID-19___by_age_group_and_state__United_States..csv')
