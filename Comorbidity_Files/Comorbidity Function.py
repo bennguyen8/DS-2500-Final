@@ -14,11 +14,10 @@ for condition in condition_lst:
         
     sum_lst.append(death_sum)
 
-conditions = comor_df['Condition'].unique() # will not include all COVID-19
+conditions = comor_df['Condition'].unique() # will be different from condition_lst
 conditions = conditions.tolist()
-conditions.remove('COVID-19') # value representing everyone who contracted COVID-19
+conditions.remove('COVID-19')
 
-# value associated with each comorbidity
 all_covid = sum_lst[-1]
 condition_values = [(round(i / all_covid, 2)) * 100 for i in sum_lst]
 
